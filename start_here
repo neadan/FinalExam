@@ -1,0 +1,111 @@
+Final Exam
+Follow the instructions carefully.
+If you feel like you're spending more than a few minutes trying to understand a certain question, let me know
+
+__________________________________
+____________PART 1____________ (25%) -- ~45min
+__________________________________
+
+Create the following 3 *classes* in school.py:
+
+*Student*
+Contains the following 2 attributes, that it must accept in its constructor
+-name (string)
+-grade (integer)
+--Methods:
+  Implement the __repr__() method
+
+
+*Course*
+Contains the following 2 attributes, that it must accept in its constructor
+-course_name (string)
+-students (list)
+--Methods:
+  None
+
+
+*WebProgramming*
+Must be a subclass of Course
+Has no attributes of its own, but must accept a list of students (Student) in its constructor
+Pass ("WebProgramming", students) up to the parent Course class' constructor
+
+Methods:
+Implement a method called get_average(), which returns the average of all the grades of the students;
+This method throws a ValueError (with a useful message), if the list of students is empty
+
+__________________________________
+____________PART 2____________ (10%) -- ~15min
+__________________________________
+In test_school.py, unit test the get_average() method you created above
+You can use the code provided as a starting point, or you can create your own from scratch
+
+__________________________________
+____________PART 3____________ (20% + 5% bonus) -- ~30min
+__________________________________
+Complete the theoretical questions in the file called theory_questions
+
+__________________________________
+____________PART 4____________ (45%) -- ~150min
+__________________________________
+For this part, do not spend any time getting your virtual environment to work. If you are having issues, let me know!!!
+
+You are tasked with creating a front office application for a popular Lawyer Firm:
+-Create a django project called LawyerFirm
+-Inside the project, create an app called frontoffice
+-Open the new project with PyCharm
+-Make sure your new app is part of the installed apps
+
+___Models___:
+-Create your models according to the schema in models.jpg in this folder
+-For each model, implement the __str__() method
+-For the Client Model, add a method called has_balance() which returns true if the client's balance is > 0, False otherwise
+-Once complete, apply the changes by first making and then running the migrations
+-You can create some test objects in your database if it helps you using 'python manage.py shell', but this is not required
+
+___Templates___:
+-Create a 'base.html' template with a welcome message from which your other templates will inherit. Have this template have a link (<a href>) to the homepage (see below)
+-Create a 'home.html' template which can be found at the url http://localhost:8000/frontoffice/home
+-Create a 'lawyer_info.html' template that will display the list of clients that belong to a specific lawyer. Additionally, only display the clients which have a balance.
+
+    For example, if Lawyer "John Smith" has clients A, B, and C, but only client C has a positive balance, display only client C on this page.
+
+    This page will be at http://localhost:8000/frontoffice/lawyers/<lawyer_name>, where <lawyer_name> refers to the last name of a lawyer in your database.
+
+    Examples:
+        http://localhost:8000/frontoffice/lawyers/Smith
+        http://localhost:8000/frontoffice/lawyers/Johnson
+
+    Note:
+
+___Views___:
+You will have 2 views.
+
+home
+-Renders 'home.html' template. No context required
+
+lawyer_info
+-Renders 'lawyer_info.html' along with the proper context
+-Include a try-except for the case that the lawyer with last_name=<lawyer_name> does not exist in the database. If that is the case,
+the user needs to be shown a 404 Not Found.
+-You can assume that there is at most 1 lawyer with the last name <lawyer_name>
+
+____
+When you are done everything, test the web application (run the server and navigate to the various pages) you've created to make sure everything is working properly
+
+_______________________________________________________________________
+_______________________________________________________________________
+_______________________________________________________________________
+Done! now zip up both folders 'FinalExam' and 'LawyerFirm', and upload it via omnivox (as you would an assignment)
+
+Any questions, feel free to message me on teams, I will be in the call.
+
+Good luck and have a nice end of summer :)
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+For the multiple choice questions, put *** beside the answer you think is correct
+There is only 1 correct answer per question
+
+______________________________________________________
+___1. Which of the following statements is correct?___
+______________________________________________________
+
+A) A class is an instance of an object
+B) An object is an instance of a class
+C) An instance is the class representation of an object
+D) Objects and classes are synonymous
+E) None of the above
+
+_________________________________________________________________________________________________________________________________________
+___2. What will NOT happen when running 'python3 manage.py runserver' from the project root directory when a project is first started?___
+_________________________________________________________________________________________________________________________________________
+
+A) An admin panel can be accessed at localhost:8000/admin
+B) A server will start and automatically refresh changes to the project code
+C) Django will start a development server on port 8000
+D) Django will fail to start because an app must first be created
+E) None of the above (they will all happen)
+
+________________________________________________
+___3. What is the purpose of a base template?___
+________________________________________________
+
+A) To hold the location of every page in the application so it can be found easier later on
+B) To help grab information from views.py to be used later
+C) To store the home page of the application that we'll be creating
+D) To reduce the HTML in other webpages by putting common elements in one central spot
+E) None of the above
+
+_____________________________________________________________
+___4. How do you evaluate a variable in a Django template?___
+_____________________________________________________________
+
+A) variable_name
+B) {% variable_name %}
+C) { variable_name }
+D) {{ variable_name }}
+E) { 'variable_name' }
+
+__________________________________________________
+___5. Which of the following is TRUE of models?___
+__________________________________________________
+
+A) Model is the layer that interacts with the database
+B) In the Model-Template-View paradigm, the View determines what data is presented, and the Model determines how it appears on a web page
+C) Django developers can communicate directly with databases without any need for an interface or models
+D) We have to provide the database storage for the application's models because Django does not provide out-of-the-box support for databases
+E) None of the above
+
+________________________________________________________________________________________________________
+___6. Consider the following code: (feel free to paste it in the main.py file for easier readability)___
+________________________________________________________________________________________________________
+
+class Director (models.Model):
+    name = models.CharField(max_length=64)
+
+class Movie(models.Model):
+    title = models.CharField(max_length=255, primary_key=True)
+    lead = models.CharField(max_length=255)
+    director = models.ForeignKey(Director, on_delete=models.CASCADE)
+
+Which of the following statements is FALSE about the models above:
+
+A) The title is the primary key for each new Movie instance created
+B) Each director can only be associated with one movie
+C) The director field in Movie will be deleted if the Director model is deleted
+D) Django creates a unique ID for each entry that is added to the database
+E) None of the above
+
+________________________________________________________________________________________________________
+___7. Consider the following code: (feel free to paste it in the main.py file for easier readability)___
+________________________________________________________________________________________________________
+
+from django.db import models
+class Score(models.Model):
+    PASS = "P"
+    FAIL = "F"
+    GRADE_CHOICES = [
+      (PASS, "Pass"),
+      (FAIL, "Fail")
+    ]
+
+Grade = models.CharField(max_length=1, choices=GRADE_CHOICES, default=PASS)
+
+Which is the following default value set for Grade when it is saved to the database?
+
+A) "P"
+B) "Pass"
+C) "Fail"
+D) "PASS"
+E) 1
+
+_________________________________________________________________________________
+___8. In the Model-Template-View design pattern, what does the View represent?___
+_________________________________________________________________________________
+
+A) The View is a CSS file containing all the styling required for your application
+B) The View provides the interface for the data stored in the Database
+C) The View is the presentation layer which consists of static HTML parts
+D) The View is what the user of your webapp sees when navigating to a page
+E) The View layer interacts with the Model and delegates data into the Template
+
+____________________________________________________________________________________________________
+___9. Consider the following html (feel free to paste it in an .html file for easier readability)___
+____________________________________________________________________________________________________
+
+<form action="" method="POST">
+  <input id="InputField" name="InputField" type="text"/>
+  <label name="LabelField"/>
+</form>
+
+What is missing from the <form> html above?
+
+A) An <input> with type="submit"
+B) action should be assigned a non-empty string
+C) There needs to be more <input type="text"> elements
+D) Django Template Language needs to be included
+E) There is nothing missing
+
+_____________________________________________________________________________________________________
+___10. In your own words, describe the difference between a project's urls.py and an app's urls.py___
+_____________________________________________________________________________________________________
+
+
+
+
+___________________________________________________Bonus Question 1__________________________________________
+___In your own words, describe why we should put computationally heavy operations in the backend (python)
+   rather than in the frontend (static files -- javascript)___
+_____________________________________________________________________________________________________________
+
